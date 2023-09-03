@@ -1,0 +1,19 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>index</title>
+  </head>
+  <body>
+    <form action="{%url 'doedit' data.id%}" method="POST">
+        {%csrf_token%}
+        <input type="text" placeholder="Name" name="name" value={{data.name}}><br>
+        <input type="number" placeholder="Mobile" name="mob" value={{data.mobile}}><br>
+        <input type="email" placeholder="Email" name="email" value={{data.email}}><br>
+        <input type="submit" value="Edit">  
+    </form>
+    <a href="{% url 'dashboard' %}" class="btn btn-outline-warning">Dashboard</a>
+  </body>
+
+</html>
